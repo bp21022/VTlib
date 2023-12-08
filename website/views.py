@@ -31,7 +31,7 @@ class Index(ListView):
     model = Post
     template_name = 'website/post_list.html'
     context_object_name = 'object_list'
-    paginate_by = 5  # ページあたりのアイテム数
+    paginate_by = 15  # ページあたりのアイテム数
 
     def get_queryset(self):
         return Post.objects.all().order_by('-created_at')
