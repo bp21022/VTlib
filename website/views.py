@@ -316,6 +316,7 @@ def your_view(request):
             new_instance.image = image_url
             new_instance.save()  # 新しいモデルインスタンスを保存
             # リダイレクトなどの追加処理...
+            return render(request, 'website/post_list.html', {'form': form})
     else:
         form = PostForm()
     return render(request, 'website/post_list.html', {'form': form})
