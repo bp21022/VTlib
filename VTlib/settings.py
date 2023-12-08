@@ -196,13 +196,15 @@ import cloudinary
 cloudinary.config( 
   cloud_name = "dx9habsuz", 
   api_key = "167433335558394", 
-  api_secret = 'b5lj7kMMLcL7ns9QpjtFpCH-ifQ'
+  api_secret = 'b5lj7kMMLcL7ns9QpjtFpCH-ifQ',
+    secure=True
 )
 
 CLOUDINARY_STORAGE = {
     'CLOUD_NAME': 'dx9habsuz',
     'API_KEY': '167433335558394',
     'API_SECRET': 'b5lj7kMMLcL7ns9QpjtFpCH-ifQ',
+    secure=True
 }
 
 
