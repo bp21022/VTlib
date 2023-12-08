@@ -1,0 +1,40 @@
+{% extends "website/base.html" %}
+
+{% block main %}
+    <h2>❁ 投稿 ❁</h2>
+    
+        {% if post.image %}
+            <h3>投稿された画像</h3>
+            <img src="{{ post.image.url }}" alt="投稿された画像" width="600px">
+        {% endif %}
+
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="投稿" class="btn btn-primary" />
+    </form>
+
+
+
+{% if related_categories %}
+        <h2>関連するカテゴリ:</h2>
+        <ul>
+            {% for category in related_categories %}
+                <li>{{ category }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %} 
+    {% if related_tags %}
+        <h2>関連するタグ:</h2>
+            <ul>
+            {% for tag in related_tags %}
+                <li>{{ tag }}</li>
+            {% endfor %}
+            </ul>
+            
+    {% endif %}
+    <div class="new-tag">
+        <a href="{% url 'add_tag' %}">Add Tag</a>
+    </div>
+
+{% endblock %}

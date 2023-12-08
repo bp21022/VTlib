@@ -1,0 +1,106 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <meta name="description" content="sample text">
+    <link rel="stylesheet" href="{% static 'sanitize.css' %}">
+    <link rel="stylesheet" href="{% static 'navbar_left.css' %}">
+    <link rel="stylesheet" href="{% static 'about.css' %}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Handjet:wght@300&family=Noto+Sans+JP:wght@100;400;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;400;800&display=swap" rel="stylesheet">
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/images/favicon_package_v0.16/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon_package_v0.16/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/images/favicon_package_v0.16/favicon-16x16.png">
+    <link rel="manifest" href="./assets/images/favicon_package_v0.16/site.webmanifest">
+    <link rel="mask-icon" href="./assets/images/favicon_package_v0.16/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+</head>
+
+<body>
+    {% include "navbar_left.html" %}
+
+<section class="credit">
+    <h1 class="section-headline">About</h1><br/>
+    
+        <h2>Whai is VTuber ?</h2>
+        <dl class="credits__main">
+            <h4>
+                  VTuber（バーチャルユーチューバー）は、バーチャルキャラクターを操作することで動画コンテンツを制作・配信する人物や個性を指します。
+                これらのキャラクターは、3Dモデルや2Dイラスト、アバターを使用して、声優やクリエイターが背後で動かし、
+                演じたり、インタラクティブなコンテンツを提供したりします。
+                
+                  VTuberの人気は、主にYouTubeや他のストリーミングプラットフォームを通じて、ゲーム実況、歌唱、トーク、ライブ配信、
+                  さらにはバラエティ番組など多岐にわたるコンテンツを提供しています。
+                  これらのキャラクターは、独自の個性や背景ストーリーを持ち、ファンとの親密なコミュニケーションを築くことができることが特徴です。
+                
+                  VTuberのファン層は、幅広い世代や地域からの支持を集めており、特に若年層からの支持が顕著です。
+                  また、彼らの活動は、仮想空間でのライブコンサートやイベントを開催するなど、リアルなイベントとの結びつきも強まっています。
+                
+                  この動向は、テクノロジーの進歩と共に成長し、バーチャル空間での表現とエンターテイメントの新しい形態を提示しています。
+                  VTuberは、バーチャルな個性を通じて、独自のファンベースを形成し、バーチャルとリアルの両方の世界で大きな影響力を持つ存在となっています。
+                </h4>
+        </dl>
+        <br/><br/><br/><br/>
+
+        <h2>Histry</h2>
+        <dl class="credits__double">
+                <dt>2000年代初頭</dt>
+                <dd>バーチャルキャラクターの登場</dd>
+                <p>2000年代初頭には、バーチャルキャラクターの存在がオンラインゲームやアニメーションなどのメディアで確立されつつありました。<br/>
+                    しかし、それらのキャラクターはしばしば企業や特定のプロジェクトの一環として用いられていました。</p>
+
+                <dt>2010年代初頭</dt>
+                <dd>VTuberの先駆け</dd>
+                <p>2010年代初頭に、バーチャルキャラクターを利用したインターネット上でのパフォーマンスやコンテンツ制作が一部の個人によって行われ始めました。<br/>
+                    これは、VTuber文化の先駆けと見なされます。</p>
+
+                <dt>2016年</dt>
+                <dd>Kizuna AIのデビュー</dd>
+                <p>2016年、Kizuna AI（キズナアイ）がデビューし、YouTubeでの活動を開始しました。<br/>
+                    Kizuna AIは、AIとされるバーチャルキャラクターで、ゲーム実況やトークコンテンツなどを提供し、大きな注目を集めました。</p>
+
+                <dt>2017年以降</dt>
+                <dd>VTuber文化の拡大</dd>
+                <p>Kizuna AIの成功を受け、他のVTuberも次々と登場し始め、YouTubeやニコニコ動画などのプラットフォームで活動を展開しました。<br/>
+                    多くのVTuberが、ゲーム実況、歌唱、トーク、バラエティ番組など幅広いコンテンツを提供し、ファン層を拡大させました。</p>
+
+                <dt>2020年代</dt>
+                <dd>VTuberブームの到来</dd>
+                <p>2020年代に入ると、VTuber文化は爆発的な成長を遂げ、さまざまなVTuberが登場し、独自のファンベースを形成しました。<br/>
+                    さらに、リアルなイベントやライブ配信、バーチャル空間でのコンサートなど、VTuber活動の多様性が広がっています。</p>
+                <br/>
+        </dl>
+        <br/><br/><br/><br/>
+
+
+        <h2>Let us know your preferences!!</h2>
+        <dl class="credits__main">
+            <h3>
+                世界中の皆さんにおすすめのVTuberやコンテンツを共有しましょう！みなさんにおすすめしたいVTuberや、ワクワクするコンテンツがたくさんあります。
+                皆さんと共有したいお気に入りを知ることができれば、楽しい時間が増えること間違いなしです。みんなでおすすめを共有して、新しいファンや友達を見つけましょう！
+            </h3>
+        </dl>
+
+      <br><br><br>
+</section>
+
+
+    
+
+    <script src="./assets/js/particles.min.js"></script>
+    <script src="./assets/js/app.js"></script>
+</body>
+</html>
+

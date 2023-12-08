@@ -1,0 +1,148 @@
+@charset "utf-8";
+
+body {
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #333; /* 背景色を #333 に設定 */
+    color: #ffffff; /* テキストの色を白に設定 */
+    font-size: 1.2rem;
+    font-weight: lighter;
+    font-family: Cochin, Georgia, Times, 'Times New Roman', serif;
+    padding: 20px; /* コンテンツと端の余白を追加 */
+  }
+  
+  .post-login {
+    text-align: center; /* リンクを中央揃えに */
+    margin-top: 20px; /* 上部の余白を追加 */
+  }
+  
+  .post-login a {
+    display: inline-block;
+    width: 100%; /* リンクの幅を100%に変更 */
+    max-width: 200px; /* リンクの最大幅を設定 */
+    padding: 10px 20px; /* パディングを追加 */
+    background-color: #007bff; /* リンクの背景色 */
+    color: #fff; /* テキストカラーを白に設定 */
+    text-decoration: none;
+    border-radius: 5px; /* ボーダーの角を丸める */
+    transition: background-color 0.3s ease; /* ホバー時の背景色変化を滑らかに */
+  }
+  
+  .post-login a:hover {
+    background-color: #0056b3; /* ホバー時の背景色 */
+  }
+  
+  .center-content {
+    text-align: center; /* コンテンツを中央揃えに */
+    margin: 0 auto; /* コンテンツを中央に配置 */
+    max-width: 600px; /* コンテンツの最大幅を設定 */
+  }
+
+
+  input[type="text"],
+  input[type="password"],
+  select {
+    width: 35%; /* 入力フィールドと選択フィールドを幅100%に変更 */
+    padding: 12px; /* 入力フィールドのパディングを増やして大きくする */
+    font-size: 1.2rem; /* フォントサイズを大きくする */
+    margin-bottom: 10px; /* 下部の余白を追加 */
+  }
+  
+  textarea {
+    width: 35%; /* テキストエリアを幅100%に変更 */
+    padding: 12px; /* パディングを増やして大きくする */
+    font-size: 1.2rem; /* フォントサイズを大きくする */
+    margin-bottom: 10px; /* 下部の余白を追加 */
+  }
+  
+  select {
+    padding: 12px; /* パディングを増やして大きくする */
+    font-size: 1.2rem; /* フォントサイズを大きくする */
+    margin-bottom: 10px; /* 下部の余白を追加 */
+  }
+
+  .new-tag {
+    padding-top: 30px;
+    text-align: center;
+  }
+  
+  .new-tag a {
+    display: inline-block;
+    background-color: #0056b3;
+    color: #ffffff;
+    font-size: 1.2rem;
+    font-weight: lighter;
+    font-family: Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .new-tag a:hover {
+    background-color: #003366;
+  }
+
+  button {
+    padding-top: 30px;
+    text-align: center;
+    display: inline-block;
+    background-color: #000000;
+    color: #ffffff;
+    font-size: 1.4rem;
+    font-weight: bold;
+    font-family: Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+  }
+
+  button:hover {
+    background-color: rgb(173, 42, 42);
+  }
+
+  input.btn.btn-primary {
+    padding-top: 30px;
+    text-align: center;
+    display: inline-block;
+    background-color: #000000;
+    color: #ffffff;
+    font-size: 1.2rem;
+    font-weight: bold;
+    font-family: Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+  }
+
+  input.btn.btn-primary:hover {
+    background-color: rgb(173, 42, 42);
+  }
+
+  .login-form input {
+    padding-top: 30px;
+    text-align: center;
+    display: inline-block;
+    font-size: 1.2rem;
+    font-weight: bold;
+    font-family: Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+  }
+
+
+  .delete-btn {
+    font-size: 1rem;
+    font-weight: bold;
+    font-family: Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-decoration: none;
+    padding: 0;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+  }

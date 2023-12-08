@@ -1,0 +1,30 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VTuber Library</title>
+    <meta name="description" content="sample text">
+    <link rel="stylesheet" href="{% static 'sanitize.css' %}">
+    <link rel="stylesheet" href="{% static 'home_logined.css' %}">
+    <link rel="stylesheet" href="{% static 'navbar_left.css' %}">
+    <link rel="stylesheet" href="{% static 'base.css' %}">
+
+    <link rel="stylesheet" href="{% static 'registration.css' %}">
+</head>
+
+
+<body>
+    {% include "navbar_left.html" %}
+
+        <div>
+        {% block main %}
+        <p>※コンテンツがありません。</p>
+        {% endblock %}
+        </div>
+
+</body>
+</html>
+

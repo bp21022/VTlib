@@ -1,0 +1,355 @@
+@charset "utf-8";
+@import url("https://use.typekit.net/dlv3ztc.css");
+
+* {
+  max-width: 100%;
+}
+
+.grid {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  overflow-x: hidden;
+}
+.grid-item {
+  list-style: none;
+}
+.grid-col-2 > .grid-item {
+  width: 50%;
+}
+.grid-col-3 > .grid-item {
+  width: 33.3%;
+}
+.grid-col-4 > .grid-item {
+  width: 25%;
+}
+
+  /*
+  ################################################################     画面上のヘッダー     ##########################################################
+  */
+
+/* モジュール全体のスタイル */
+.module-filters {
+  text-align: center;
+  align-items: center;
+  height: 70px;
+  display: flex; /* 横並びに配置するためにFlexboxを使用 */
+  align-items: center; /* 縦方向の中央揃え */
+  padding-left: 80px;
+  /* モジュールの上部配置 */
+  max-width: 100%;
+}
+
+.search {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search input,
+.search select {
+  width: 300px;
+  height: 40px;
+  padding: 5px 15px;
+  border: none;
+  box-sizing: border-box;
+  background-color: #e3f1fd;
+  font-size: 1em;
+  outline: none;
+  border-radius: 10px;
+  border: 1px solid rgb(94, 94, 94); /* 外枠を黒に追加 */
+  margin: 0;
+}
+
+.search input::placeholder {
+  color: #000000;
+}
+
+.search-key {
+  padding-right: 10px;
+  font-size: 1.2rem;
+  border-bottom: 2px solid transparent;
+  transition: border-bottom .5s ease-in-out; /* transitionプロパティをborder-bottomに適用 */
+  position: relative; /* 相対位置指定 */
+}
+
+.search-key::before {
+  content: ""; /* 擬似要素を使用して左からの境界線を作成 */
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0; /* 初期状態は0 */
+  height: 100%;
+  border-bottom: 2px solid #20cbff;
+  transition: width .5s ease-in-out; /* widthのtransitionを設定 */
+}
+
+.search-key:hover::before {
+  width: 100%; /* ホバー時に境界線の幅を100%に拡大 */
+}
+
+.search-genre {
+  font-size: 1.2rem; /* 大きめのフォントサイズ */
+}
+
+/*
+#########################################################    HERO    ###########################################################################
+*/
+
+
+.Hero {
+  z-index: 5;
+  width: 100vw;
+  height: 360px;
+  position: relative;
+  overflow: hidden;
+}
+
+.Hero a {
+  display: flex;
+  align-items: center;
+  text-decoration: none; /* リンクの下線を消す */
+  color: inherit; /* リンクの色を親要素と同じにする */
+}
+
+/* Hero-img クラス（画像）のスタイル */
+.Hero-img-1 {
+  width: 300px;
+  height: 300px;
+  display: block; /* インライン要素からブロック要素に変更 */
+  z-index: 8;
+  position: relative; /* 親要素としての位置を設定 */
+  top: 75px;
+  left: 150px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+/* Hero-img クラス（画像）のスタイル */
+.Hero-img-2 {
+  z-index: 7; /* img2をimg1の上に表示 */
+  width: 100%; /* 親要素いっぱいに広げる */
+  height: auto; /* 高さを自動調整してアスペクト比を維持する */
+  display: block; /* インライン要素からブロック要素に変更 */
+  object-fit: cover; /* 画像を保ちつつ親要素にフィットさせる */
+  opacity: 0.8; /* 画像を少し透明にする（0から1の範囲で指定） */
+  position: absolute; /* 親要素を基準に配置 */
+  top: 50%; /* 親要素の上端から50%の位置に配置 */
+  left: 0; /* 左端に配置 */
+  transform: translateY(-50%); /* 垂直方向に中心に配置 */
+}
+
+.Hero-strong {
+  position: absolute;
+  z-index: 12;
+  color: #222;
+  top: 0;
+  left: 600px;
+  text-align: center; /* テキストを中央に配置 */
+  font-size: 3.5rem; /* 大きめのフォントサイズ */
+  letter-spacing: 15px; /* 文字間隔を調整 */
+  border-bottom: 2px solid transparent;
+  transition: border-bottom .5s ease-in-out; /* transitionプロパティをborder-bottomに適用 */
+  font-weight: lighter;
+  /* カーソルが当たった際のスタイル */
+ transition: color 2.3s ease-in-out; /* 色の変化をアニメーション化 */
+}
+
+.Hero-strong::before {
+  content: ""; /* 擬似要素を使用して左からの境界線を作成 */
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0; /* 初期状態は0 */
+  height: 100%;
+  border-bottom: 2px solid #20cbff;
+  transition: width .5s ease-in-out; /* widthのtransitionを設定 */
+}
+
+.Hero-strong:hover::before {
+  width: 100%; /* ホバー時に境界線の幅を100%に拡大 */
+}
+
+.Hero-text {
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: rgb(0, 0, 0);
+  padding-left: 130px;
+  padding-top: 50px; /* 上の余白を縮小 */
+}
+
+.Hero-message {
+  padding-top: 5px; /* 上の余白を縮小 */
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ffffff;
+  margin-top: 10px;
+}
+
+.Hero-name {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #ffffff;
+  margin: 0; /* デフォルトの余白を削除 */
+}
+
+.Hero-purson {
+  justify-content: center;
+  text-align: center;
+  font-size: 1.3rem;
+  font-style: italic;
+  font-weight: bold;
+  color: #ffffff;
+  margin: 0; /* デフォルトの余白を削除 */
+}
+
+
+/*
+  ################################################################     記事     ##########################################################
+*/
+
+.section {
+  padding: 30px 15px;
+}
+.section-headline {
+  text-align: center;
+  font-size: 40px;
+  font-weight: bold;
+  margin: 0 0 40px;
+}
+
+.FEATURED-head {
+  position: relative;
+  text-align: left;
+  font-size: 30px;
+  padding-left: 100px;
+  font-weight: bold;
+  letter-spacing: -10px; /* 文字間隔を調整 */
+  font-weight: bold;
+
+  margin: 30px 0 40px; /* 上の余白を追加 */
+  letter-spacing: 2px; /* 文字間隔を調整 */
+  transition: color 2.3s ease-in-out, border-bottom, border-top .5s ease-in-out; /* トランジションを複数指定 */
+}
+.FEATURED-head::before,
+.FEATURED-head::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background-color: #20cbff;
+  transition: width .5s ease-in-out;
+}
+.FEATURED-head::before {
+  bottom: -2px;
+  left: 0;
+}
+.FEATURED-head::after {
+  top: -2px;
+  right: 0;
+}
+.FEATURED-head:hover::before,
+.FEATURED-head:hover::after {
+  width: 100%;
+}
+
+.grid-col-4 {
+  display: flex;
+  gap: 10px; /* カード間の間隔を設定 */
+  padding-left: 90px; /* 左側の余白を15pxに設定 */
+  padding-right: 15px; /* 右側の余白を15pxに設定 */
+  padding-bottom: 40px;
+}
+
+.grid-col-4 > div {
+  flex: 1 1 calc(20% + 20px); /* 20%幅で横並びにし、間隔分の余白を除く */
+  max-width: calc(20% + 20px); /* 最大幅を設定 */
+  box-sizing: border-box;
+}
+.card {
+  padding: 0 10px;
+  width: 90%;
+}
+.card-link {
+  display: block;
+  color: #333;
+  text-decoration: none;
+  position: relative;
+}
+.card-label {
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: #999;
+  color: #fff;
+  display: block;
+  padding: 5px 10px;
+  font-size: 12px;
+}
+.card-image {
+  display: flex;
+  align-items: center;
+  width: 300px;
+  height: auto;
+  transition: transform 0.3s ease-in-out; /* ホバー時の変化をアニメーション化 */
+}
+
+.card-image:hover {
+  transform: scale(1.03); /* ホバー時に画像を少し拡大 */
+  overflow: hidden;
+}
+.card-time {
+  margin: 0;
+  margin-bottom: 15px;
+  font-size: 17px;
+  font-weight: lighter;
+  color: #333;
+  padding-left: 5px;
+}
+.card-headline {
+  margin: 0;
+  font-size: 20px;
+  font-weight: lighter;
+  color: #333;
+  padding-left: 5px;
+}
+.card-description {
+  margin: 0;
+  color: #fff;
+}
+
+.card-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 10px;
+  /* 任意のスタイルを追加 */
+}
+
+.card-genre {
+  margin: 0;
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+}
+
+.card-button {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-radius: 50%; /* 丸い領域にする */
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+}
+
+.card-button svg {
+  margin-right: 10px;
+  /* 任意のスタイルを追加 */
+}

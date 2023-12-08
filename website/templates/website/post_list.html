@@ -1,0 +1,53 @@
+{% extends "website/logined.html" %}
+{% block main %}
+{% csrf_token %}
+<div class="card-container">
+    {% for post in object_list %}
+        <article class="card">
+            <a href={% url 'detail' post.pk %} class="card-link">
+                <picture class="card-image">
+                    <img src="{{ post.image.url }}" alt="{{ post.title }}">
+                </picture>
+                <div>
+                    <h2 class="card-headline">{{ post.title }}</h2>
+                    <time class="card-time" datetime="{{ post.created_at }}">{{ post.created_at }}</time>
+                </div>
+                <div class="card-contents"> 
+                    <h2 class="card-genre">{{ post.category.name }}</h2>
+                    {% if post.related_categories %}
+                            {% for category in post.related_categories %}
+                                <li>{{ category }}</li>
+                            {% endfor %}
+                    {% endif %}
+                    {% if post.tags.all %}
+                            {% for tag in post.tags.all %}
+                                <p class="card-tag">#{{ tag.name }}　　</p>
+                            {% endfor %}
+                    {% endif %}
+                </a>
+            </div>
+        </article>
+    {% endfor %}
+
+    <!-- ページネーションを表示 -->
+    {% if is_paginated %}
+        <div class="pagination">
+            <span class="step-links">
+                {% if page_obj.has_previous %}
+                    <a href="?page=1">&laquo; 最初へ</a>
+                    <a href="?page={{ page_obj.previous_page_number }}">前へ</a>
+                {% endif %}
+
+                <span class="current">
+                    ページ {{ page_obj.number }} / {{ page_obj.paginator.num_pages }}
+                </span>
+
+                {% if page_obj.has_next %}
+                    <a href="?page={{ page_obj.next_page_number }}">次へ</a>
+                    <a href="?page={{ page_obj.paginator.num_pages }}">最後へ &raquo;</a>
+                {% endif %}
+            </span>
+        </div>
+    {% endif %}
+    
+{% endblock %}

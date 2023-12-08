@@ -1,0 +1,40 @@
+@charset "utf-8";
+@import url("https://use.typekit.net/dlv3ztc.css");
+
+body {
+    font-weight: lighter;
+    font-family: Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.reg {
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.1); /* 透明度を調整 */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3); /* 影を追加 */
+}
+
+.reg_form {
+    margin-top: 20px;
+    padding: 20px;
+}
+
+.btn {
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #007bff;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}

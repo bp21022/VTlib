@@ -1,0 +1,113 @@
+@charset "utf-8";
+@import url("https://use.typekit.net/dlv3ztc.css");
+
+*{
+  font-family: Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+/* Left Header */
+header.clearfix {
+  overflow-x: hidden;
+  z-index: 10;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  display: flex;
+  transition: width 0.25s ease-in-out; /* Removed opacity transition */
+  width: 70px;
+  background-color: #6e6e6e;
+  gap: 50px;
+}
+
+.func-list {
+  position: fixed; /* Position fixed for func-list */
+  top: 20px;
+  left: 15px;
+  transition: none; /* Removed transition for func-list */
+}
+
+header.clearfix:hover {
+  width: 240px;
+}
+
+.each-item {
+  display: inline;
+  margin-top: 40px;
+}
+
+
+/* Show text on hover */
+header.clearfix:hover .nav-item {
+  opacity: 1;
+}
+
+/* Text */
+.nav-item {
+  color: #fff;
+  display: flex;
+  align-items: center; /* Center text vertically with SVG */
+  opacity: 0; /* Initially hide text */
+  transition: opacity 0.3s ease-in-out; /* Smooth transition for text opacity */
+  margin-left: 10px; /* Add margin to separate text from SVG */
+  margin-left: 30px;
+}
+
+/* SVG */
+.each-item svg {
+  vertical-align: middle; /* Align SVG vertically with text */
+}
+
+/* Position text to the right of SVG */
+.each-item {
+  display: flex;
+  align-items: center;
+}
+
+/* Show text on hover */
+header.clearfix:hover .nav-item {
+  opacity: 1;
+}
+
+
+/* Show text on hover */
+.func-list:hover .nav-item {
+  display: inline-block;
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out; /* Smooth transition for text opacity */
+}
+
+/* Position text to the right of SVG */
+.each-item a {
+  display: flex;
+  align-items: center;
+  text-decoration: none; /* Remove default text underline */
+}
+
+
+.each-item .nav-item {
+  position: relative;
+  text-decoration: none; /* 初期状態ではアンダーラインを非表示にする */
+}
+
+.each-item .nav-item::before {
+  content: '';
+  position: absolute;
+  width: 0; /* 初期状態では幅を0にして非表示にする */
+  height: 2px; /* アンダーラインの高さ */
+  bottom: -2px; /* テキストの下に配置 */
+  left: 0;
+  background-color: #ffffff; /* アンダーラインの色 */
+  transition: width 0.3s ease; /* アニメーションの速度やイージングを調整 */
+}
+
+.each-item:hover .nav-item::before {
+  width: 100%; /* テキストの幅までアンダーラインを広げる */
+}
+
+
+@media screen and (max-width: 768px) {
+  header.clearfix{
+    display: none;
+  }
+}

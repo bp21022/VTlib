@@ -1,0 +1,232 @@
+@charset "utf-8";
+@import url("https://use.typekit.net/dlv3ztc.css");
+
+/* ページ全体のスタイリング */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+  }
+  
+  
+.post-sect1 {
+  z-index: 2;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 75.5%; /* 左右の合計幅 */
+  height: 100%;
+  background: linear-gradient(to right, #FFF 0 37%, #111 10% 73%); /* 左右の色と幅を設定 */
+  clip-path: polygon(
+        0 0,
+        100% 0,
+        100% calc(100% - 15vw),
+        0 100%
+    );
+}
+  
+.posted-name  {
+  font-size: 5.0rem;
+  font-weight: bold;
+  font-family: Cochin, Georgia, Times, 'Times New Roman', serif;
+  padding-left: 700px;
+  padding-top: 64px;
+  font-size: 24px;
+  color: #ffffff;
+}
+
+.posted-category {
+  display: flex;
+  padding-left: 580px;
+  margin-left: 120px;
+  margin-bottom: 10px;
+}
+
+
+
+  
+.post-genre {
+    font-weight: lighter;
+    font-family: Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: #797979;
+}
+
+.post-genre-name {
+  font-size: 1.4rem;
+  font-weight: bold;
+  font-family: Cochin, Georgia, Times, 'Times New Roman', serif;
+  color: #ffffff;
+  padding-left: 27px;
+}
+.post-genre-name-sub {
+  font-family: Cochin, Georgia, Times, 'Times New Roman', serif;
+  color: #000000;
+  font-size: 20px;
+  padding-left: 20px;
+}
+.posted-body {
+  position: fixed;
+  top: 80px;
+  margin-left: 100px;
+  padding-right: 730px;
+}
+
+.posted-body-p {
+    z-index: 11;
+    font-family: Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 16px;
+    line-height: 3;
+    color: #111;
+    padding-right: 340px;
+    margin-right: 300px;
+}
+
+.post-img {
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* 親要素の高さいっぱいに設定 */
+  overflow: hidden; /* ホバー時のオーバーフローを隠すために追加 */
+}
+
+.post-img img {
+  border-radius: 5px;
+  z-index: 30;
+  max-width: 100%; /* 幅が親要素より大きくならないように設定 */
+  width: 800px;
+  height: auto;
+  display: block;
+  margin: 0 auto; /* 横方向に中央に配置 */
+  /* 以下、縦方向に中央に配置するための追加スタイル */
+  position: relative;
+  margin-right: 50px;
+  margin-left: 100px;
+}
+
+  
+  /* .post-sect2 のスタイリング */
+.post-sect2 {
+  font-family: Cochin, Georgia, Times, 'Times New Roman', serif;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 0;
+  float: right;
+  width: 27%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end; /* 右詰めにするための設定 */
+}
+  
+.post-edit,
+.post-content {
+  font-size: 16px;
+  font-weight: lighter;
+  padding-right: 100px;
+  margin-left: 60px;
+  display: flex;
+  flex: 1;
+  gap: 40px;
+}
+  
+.post-edit a,
+.post-content a {
+  font-size: 16px;
+  font-weight: lighter;
+  text-decoration: none;
+  color: #333;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.posted-link {
+  font-size: 30px;
+  font-weight: bold;
+  padding-top: 500px;
+  padding-right: 120px;
+  font-size: 14px;
+  color: #666;
+}
+
+.card-time {
+  margin-right: 150px;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.post-link-message {
+  font-weight: bold;
+  color: #007bff;
+}
+
+/* ボタンのスタイリング */
+.post-edit svg,
+.post-content svg {
+  width: 24px;
+  height: 24px;
+  fill: #333;
+}
+
+.post-link-message svg {
+  width: 20px;
+  height: 20px;
+  fill: #007bff;
+}
+
+
+
+  
+@media screen and (max-width: 768px) {
+  .post-edit,
+  .post-content,
+  .posted-time,
+  .posted-link,
+  canvas#imageCanvas {
+    display: none; /* 編集、削除、投稿日時のセクションを非表示にする */
+  }
+
+  .posted-category
+   {
+    bottom: 30px;
+    justify-content: flex-start;
+    max-width: 100%;
+  }
+  
+  .post-genre-name {
+    margin-left: 20px;
+    text-align: left;
+  }
+  .image-container {
+    max-width: 100%;
+    text-align: center;
+    margin: -100px;
+    padding: 30px;
+  }
+  .posted-body {
+    top: 0;
+    font-size: 1.1rem;
+    margin: 20px 100px;
+    padding: 0;
+    z-index: 999;
+    fill: #bdbdbd;
+  }
+  .posted-body p {
+    max-width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+
+  .post-sect1 {
+    z-index: 2;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 75.5%;
+    height: 100%;
+    background: #ffffff;
+    clip-path: none;
+}
+}

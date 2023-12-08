@@ -1,0 +1,65 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <meta name="description" content="sample text">
+    <link rel="stylesheet" href="{% static 'sanitize.css' %}">
+    <link rel="stylesheet" href="{% static 'navbar_left.css' %}">
+    <link rel="stylesheet" href="{% static 'home_logined.css' %}">
+    <link rel="stylesheet" href="{% static 'contact.css' %}">
+    <link rel="stylesheet" href="{% static 'footer.css' %}">
+
+    
+
+</head>
+
+<body>
+  {% include "navbar_left.html" %}
+  <section class="Contact">
+    <br>
+    <h1 class="section-headline">Contact</h1>
+
+    <form class="form" action="https://api.staticforms.xyz/submit" method="post">
+        <input type="hidden" name="accessKey" value="08d1ece1-f7d0-41dd-aa79-877db19d3016"> <!-- Required -->
+        <div>
+            <label for="subject" class="label">
+                Subject
+            </label>
+            <input class="input" type="text" id="subject" name="name" required>
+        </div>
+        <div>
+            <label for="name" class="label">
+                Name
+            </label>
+            <input class="input" type="text" id="name" name="name" required>
+        </div>
+        <div>
+            <label for="email" class="label">
+                Email
+            </label>
+            <input class="input" type="text" id="email" name="email" required>
+        </div>
+        <div>
+            <label for="detail" class="label">
+                Detail
+            </label>
+            <textarea class="textarea" placeholder="詳細" id="detail" name="message"></textarea>
+        </div>
+
+        <div>
+            <input type="hidden" name="redirectTo" value="http://127.0.0.1:8000/contact/">
+            <input class="button" type="submit" value="Submit">
+            <input class="button" type="reset" value="Reset">
+        </div>
+        
+        <br>
+    </form>
+      <br><br><br>
+</section>
+
+</body>
+</html>

@@ -1,0 +1,51 @@
+/* 画像を横幅700pxに設定 */
+.custom-image {
+    max-width: 600px;
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto; /* 画像を中央に配置 */
+  }
+  
+  /* ページ全体の背景色を設定 */
+  .custom-body {
+    font-size: 1.2rem;
+    font-weight: lighter;
+    font-family: Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-color: #333;
+    color: #ffffff; /* テキストカラーを白に設定 */
+    padding: 20px; /* コンテンツと端の余白を追加 */
+  }
+
+  .custom-body p {
+    color: #ffffff; /* テキストカラーを白に設定 */
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    font-size: 1.1rem;
+    font-weight: lighter;
+    font-family: Cochin, Georgia, Times, 'Times New Roman', serif;
+  }
+  
+  .custom-heading {
+    text-align: center; /* h1タグを中央に配置 */
+  }
+
+  .section-list{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 0;
+  }
+
+  .post-login-list2 {
+    font-size: 1.4rem;
+    font-weight: lighter;
+    font-family: Cochin, Georgia, Times, 'Times New Roman', serif;
+    display: flex;
+    gap: 30px;
+    margin: 0;
+    padding: 5px;
+  }

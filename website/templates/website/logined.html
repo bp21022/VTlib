@@ -1,0 +1,117 @@
+{% load static %}
+{% load socialaccount %}
+
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VTuber Library</title>
+    <meta name="description" content="sample text">
+    <link rel="stylesheet" href="{% static 'sanitize.css' %}">
+    <link rel="stylesheet" href="{% static 'navbar_left.css' %}">
+    <link rel="stylesheet" href="{% static 'home_logined.css' %}">
+    <link rel="stylesheet" href="{% static 'footer.css' %}">
+
+</head>
+
+<body>
+    {% include "navbar_left.html" %}
+
+    <article class="module-filters">
+        <form class="search" action="{% url 'search_posts' %}" method="get">
+            <div class="search-items">
+                <label class="search-key" for="key">search</label>
+                <input class="submit-on-enter" type="text" placeholder="キーワードを入力" id="key" name="key">
+                <label class="search-genre" for="genre"></label>
+            </div>
+            <div class="search-items">
+                <select id="genre" name="genre">
+                    <option value="">Search Genres</option>
+                    <option value="ゲーム配信">ゲーム配信</option>
+                    <option value="ASMR">ASMR</option>
+                    <option value="音楽">音楽</option>
+                    <option value="料理">料理</option>
+                    <option value="メイク">メイク</option>
+                    <option value="ファッション">ファッション</option>
+                    <option value="テクノロジー">テクノロジー</option>
+                    <option value="DIY">DIY</option>
+                    <option value="ライフハック">ライフハック</option>
+                    <option value="エンタメ">エンタメ</option>
+                    <option value="芸術">芸術</option>
+                    <option value="芸術">VR</option>
+                </select>
+            </div>
+            <button type="submit">検索</button>
+        </form>
+            <div class="post-login">
+                <p><a href="{% url 'create' %}" style="display: inline-block; width: 140%; height: 300%;">投稿</a id="pos"></p>
+            </div>
+            {% comment %} <div class="post-item">
+                <p><a href="{% url 'signup' %}" style="display: inline-block; width: 140%; height: 300%;">サインアップ</a id="pos"></p>
+            </div> {% endcomment %}
+            <div class="post-login-list"> 
+                {% if not user.is_authenticated %}
+                    <div class="post-login">
+                        <p><a href="/register" style="display: inline-block; width: 140%; height: 300%;">新規登録</a id="pos"></p>
+                    </div>
+                    <div class="post-login">
+                        <p><a href="/login" style="display: inline-block; width: 140%; height: 300%;">ログイン</a id="pos"></p>
+                    </div>
+                    <div class="post-login">
+                        <p><a href="{% provider_login_url 'google'%}?next=/logined" class="btn btn-primary">Login with Google</a></p>
+                    </div>
+                {% endif %}
+                {% if user.is_authenticated %}
+                    <div class="post-logout">
+                        <p><a href="{% url 'my_page' %}" style="display: inline-block; width: 140%; height: 300%;">My Page</a id="pos"></p>
+                    </div>
+                    <div class="post-logout">
+                        <p><a href="/logout" style="display: inline-block; width: 140%; height: 300%;">ログアウト</a id="pos"></p>
+                    </div>
+                    
+                {% endif %}
+            </div>
+    </article>
+
+
+<!-###################################################  HERO  #####################################################################->
+<div class="Hero">
+    <strong class="Hero-strong">
+        {% if user.is_authenticated %}
+            Welcome, {{ user.username }}!
+        {% endif %}
+    </strong>
+    <a href="https://www.youtube.com/watch?v=_M-6lkoi6L4" target="_blank">
+        <picture class="Hero-img-1">
+            <img src="{% static 'calliope.jpg' %}" alt="Alternative text for the image">
+        </picture>
+        <div class="Hero-text">
+            <h3 class="Hero-message">Top Recommend</h3>
+            <h2 class="Hero-name">♬ Off With Their Heads</h2>
+            <h3 class="Hero-purson"> Calliope Mori </h3>
+        </div>
+
+    </a>
+
+    <picture class="Hero-img-2">
+        <img src="{% static 'R (1).jpg' %}" alt="Alternative text for the image">
+    </picture>
+</div>
+
+<!-###################################################  SECTION  #####################################################################->
+<section class="section">
+    <h1 class="FEATURED-head">Recent Artist (全{{ page_obj.paginator.count }}件)</h1>
+    <div class="section-card-list">
+    {% block main %}
+    
+            <p>※コンテンツがありません。</p>
+        
+    {% endblock %}
+    </div>
+</section>
+
+{% include "footer.html" %}
+
+</head>
+</body>

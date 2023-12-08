@@ -1,0 +1,73 @@
+@charset "utf-8";
+@import url("https://use.typekit.net/dlv3ztc.css");
+
+body{
+    background-color: #ffffff;
+}
+
+.credit {
+    font-size: 62.5%;
+    font-size: 1.6rem;
+    color: #000000;
+    font-family: adelle;
+    font-variant-ligatures: common-ligatures;
+    justify-content: center;
+    font-synthesis: none;
+    text-align: center;
+    text-wrap: balance;
+    word-break: auto-phrase;
+}
+.credits__main {
+    font-weight: bold;
+    font-family: Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 1.2rem;
+}
+.credits__double {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0 2rem;
+}
+.credits__double > dt {
+    text-align: right;
+    font-variant-caps: all-small-caps;
+    margin-top: 10px;
+}
+.credits__double > dd {
+    text-align: left;
+    grid-column: 2 / 3;
+    margin-top: 10px;
+}
+.credits__double > p {
+    text-align: center; /* 中央寄せにする */
+    grid-column: span 2; /* 列を2つ分に広げる */
+    margin-top: 10px;
+    font-size: 25%;
+    font-size: 1rem;
+    margin: 0px 70px 70px;
+}
+.credit-jp {
+    font-weight: lighter;
+}
+.credits__feature {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 1.7rem;
+}
+.credits__feature > dl {
+    padding: 0 2rem 2rem 2rem;
+    flex-basis: 30rem;
+    text-align: center;
+}
+.credits__feature > dt {
+    font-style: italic;
+    margin-bottom: .5rem;
+}
+.credits__feature > dd {
+    font-size: 1.5rem;
+}
+em {
+    font-variant-caps: normal;
+    font-size: .8em;
+}
+

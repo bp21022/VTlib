@@ -1,0 +1,48 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usage Policy</title>
+    <meta name="description" content="sample text">
+    <link rel="stylesheet" href="{% static 'sanitize.css' %}">
+    <link rel="stylesheet" href="{% static 'navbar_left.css' %}">
+    <link rel="stylesheet" href="{% static 'usage-policy.css' %}">
+    <link rel="stylesheet" href="{% static 'footer.css' %}">
+
+</head>
+
+<body>
+    {% include "navbar_left.html" %}
+
+<section class="credit">
+    <h1 class="section-headline">Usage Policy</h1><br/>
+    
+        <h2>Let us know your preferences</h2>
+        <dl class="credits__main">
+            <h4>
+                  VTuber（バーチャルユーチューバー）は、バーチャルキャラクターを操作することで動画コンテンツを制作・配信する人物や個性を指します。<br/>
+                これらのキャラクターは、3Dモデルや2Dイラスト、アバターを使用して、声優やクリエイターが背後で動かし、<br/>
+                演じたり、インタラクティブなコンテンツを提供したりします。<br/>
+                <br/>
+                  VTuberの人気は、主にYouTubeや他のストリーミングプラットフォームを通じて、ゲーム実況、歌唱、トーク、ライブ配信、<br/>
+                  さらにはバラエティ番組など多岐にわたるコンテンツを提供しています。<br/>
+                  これらのキャラクターは、独自の個性や背景ストーリーを持ち、ファンとの親密なコミュニケーションを築くことができることが特徴です。<br/>
+                <br/>
+                  VTuberのファン層は、幅広い世代や地域からの支持を集めており、特に若年層からの支持が顕著です。<br/>
+                  また、彼らの活動は、仮想空間でのライブコンサートやイベントを開催するなど、リアルなイベントとの結びつきも強まっています。<br/>
+                <br/>
+                  この動向は、テクノロジーの進歩と共に成長し、バーチャル空間での表現とエンターテイメントの新しい形態を提示しています。<br/>
+                  VTuberは、バーチャルな個性を通じて、独自のファンベースを形成し、バーチャルとリアルの両方の世界で大きな影響力を持つ存在となっています。<br/>
+                </h4>
+        </dl>
+        <br/><br/><br/><br/>
+      <br><br><br>
+</section>
+{% include "footer.html" %}
+
+</body>
+</html>
+

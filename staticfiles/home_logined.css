@@ -1,0 +1,601 @@
+@charset "utf-8";
+@import url("https://use.typekit.net/dlv3ztc.css");
+
+
+* {
+  max-width: 100%;
+  font-family: Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+
+
+  /*
+  ################################################################     画面上のヘッダー     ##########################################################
+  */
+
+/* モジュール全体のスタイル */
+.module-filters {
+    text-align: center;
+    align-items: center;
+    height: 70px;
+    display: flex; /* 横並びに配置するためにFlexboxを使用 */
+    align-items: center; /* 縦方向の中央揃え */
+    padding-left: 80px;
+    /* モジュールの上部配置 */
+    max-width: 100%;
+    gap: 50px;
+}
+
+.search {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.search input,
+.search select {
+    width: 300px;
+    height: 40px;
+    padding: 5px 15px;
+    border: none;
+    box-sizing: border-box;
+    background-color: #e3f1fd;
+    font-size: 1em;
+    outline: none;
+    border-radius: 10px;
+    border: 1px solid rgb(94, 94, 94); /* 外枠を黒に追加 */
+    margin: 0;
+}
+
+.search input::placeholder {
+    color: #000000;
+}
+
+.search-key {
+    padding-right: 10px;
+    font-size: 1.2rem;
+    border-bottom: 2px solid transparent;
+    transition: border-bottom .5s ease-in-out; /* transitionプロパティをborder-bottomに適用 */
+    position: relative; /* 相対位置指定 */
+}
+
+.search-key::before {
+    content: ""; /* 擬似要素を使用して左からの境界線を作成 */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0; /* 初期状態は0 */
+    height: 100%;
+    border-bottom: 2px solid #20cbff;
+    transition: width .5s ease-in-out; /* widthのtransitionを設定 */
+}
+
+.search-key:hover::before {
+    width: 100%; /* ホバー時に境界線の幅を100%に拡大 */
+}
+
+.search-genre {
+    font-size: 1.2rem; /* 大きめのフォントサイズ */
+}
+
+.post {
+    margin-left: auto; /* 自動的に右側に寄せる */
+    font-size: 1.2rem; /* フォントサイズを調整 */
+}
+
+.module-filters .search-items {
+    display: inline-block; /* 要素をインラインブロック要素として表示 */
+    margin-right: 20px; /* 右側に余白を設定して要素間の間隔を調整 */
+}
+
+/* 最後の要素には余白を適用しない */
+.module-filters .search-items:last-child {
+    margin-right: 0;
+}
+
+.module-filters .search-items:nth-child(3) {
+    position: relative;
+    font-size: 1rem; /* 大きめのフォントサイズ */
+    font-weight: bold;
+    padding: 0;
+    padding-bottom: 50px;
+    margin-left: 200px;
+    border: 1px solid #333;
+    background-color: #4d4d4d;
+    display: inline-block;
+    width: 150px;
+    height: 50px;
+    outline: 2px solid rgb(255, 0, 255);
+    text-align: center;
+    align-items: center;
+    
+}
+
+.module-filters .search-items:nth-child(3) a {
+    text-align: center;
+    align-items: center;
+    color: #fff;
+    text-decoration: none;
+    display: block; /* ブロックレベル要素に変更 */
+    height: 100%; /* 親要素の高さを継承 */
+}
+
+.module-filters .search-items:nth-child(3) a:hover {
+    border-bottom: 2px solid rgb(230, 255, 3);
+}
+
+.search-submit {
+  padding-right: 10px;
+  font-size: 1.2rem;
+  border-bottom: 2px solid transparent;
+  transition: border-bottom .5s ease-in-out; /* transitionプロパティをborder-bottomに適用 */
+  position: relative; /* 相対位置指定 */
+}
+
+.search button {
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff; /* ボタンの背景色 */
+  color: #fff;
+  transition: background-color 0.3s ease;
+}
+
+.search button:hover {
+  background-color: #0056b3; /* ホバー時の背景色 */
+}
+
+
+.post-login-list {
+  font-size: 1.4rem;
+  font-weight: lighter;
+  font-family: Cochin, Georgia, Times, 'Times New Roman', serif;
+  display: flex;
+  gap: 30px;
+  margin: 0;
+  padding: 5px;
+  padding-left: 200px;
+}
+
+.post-login, .post-logout {
+  display: inline-block;
+  font-size: 1.2rem;
+}
+
+.post-login a, .post-logout a {
+  display: block;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: #ffffff;
+  background-color: #000000; /* ボタンの背景色 */
+  border-radius: 5px;
+  transition: background-color 0.3s ease; /* ホバー時の色の変化を滑らかに */
+}
+
+.post-login a:hover, .post-logout a:hover {
+  background-color: #7a0000; /* ホバー時の背景色 */
+}
+
+/* モバイルデバイス向けのスタイル */
+@media screen and (max-width: 768px) {
+  .post-login-list,
+  .post-login,
+  .search-key,
+  .post-login,
+  .module-filters {
+    display: none;
+  }
+  .search-items {
+    max-width: 50%;
+    padding: 10px;
+  }
+}
+/*
+#############################################   HERO   #####################################################################
+*/
+
+
+
+.Hero {
+  z-index: 5;
+  width: 100vw;
+  height: 360px;
+  position: relative;
+  overflow: hidden;
+}
+
+.Hero a {
+  display: flex;
+  align-items: center;
+  text-decoration: none; /* リンクの下線を消す */
+  color: inherit; /* リンクの色を親要素と同じにする */
+}
+
+/* Hero-img クラス（画像）のスタイル */
+.Hero-img-1 {
+  width: 300px;
+  height: 300px;
+  display: block; /* インライン要素からブロック要素に変更 */
+  z-index: 8;
+  position: relative; /* 親要素としての位置を設定 */
+  top: 75px;
+  left: 150px;
+  border-radius: 5px;
+  overflow: hidden;
+  clip-path: polygon(
+    0 0,
+    100% calc(100% - 150vw),
+    100% 100%,
+    0 100% 
+  );
+}
+
+/* Hero-img クラス（画像）のスタイル */
+.Hero-img-2 {
+  z-index: 7; /* img2をimg1の上に表示 */
+  width: 100%; /* 親要素いっぱいに広げる */
+  height: auto; /* 高さを自動調整してアスペクト比を維持する */
+  display: block; /* インライン要素からブロック要素に変更 */
+  object-fit: cover; /* 画像を保ちつつ親要素にフィットさせる */
+  opacity: 0.8; /* 画像を少し透明にする（0から1の範囲で指定） */
+  position: absolute; /* 親要素を基準に配置 */
+  top: 50%; /* 親要素の上端から50%の位置に配置 */
+  left: 0; /* 左端に配置 */
+  transform: translateY(-50%); /* 垂直方向に中心に配置 */
+}
+
+.Hero-strong {
+  position: absolute;
+  z-index: 12;
+  color: #222;
+  top: 0;
+  left: 600px;
+  text-align: center; /* テキストを中央に配置 */
+  font-size: 3.5rem; /* 大きめのフォントサイズ */
+  letter-spacing: 15px; /* 文字間隔を調整 */
+  border-bottom: 2px solid transparent;
+  transition: border-bottom .5s ease-in-out; /* transitionプロパティをborder-bottomに適用 */
+  font-weight: lighter;
+  /* カーソルが当たった際のスタイル */
+ transition: color 2.3s ease-in-out; /* 色の変化をアニメーション化 */
+}
+
+.Hero-strong::before {
+  content: ""; /* 擬似要素を使用して左からの境界線を作成 */
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0; /* 初期状態は0 */
+  height: 100%;
+  border-bottom: 2px solid #20cbff;
+  transition: width .5s ease-in-out; /* widthのtransitionを設定 */
+}
+
+.Hero-strong:hover::before {
+  width: 100%; /* ホバー時に境界線の幅を100%に拡大 */
+}
+
+.Hero-text {
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: rgb(0, 0, 0);
+  padding-left: 130px;
+  padding-top: 50px; /* 上の余白を縮小 */
+}
+
+.Hero-message {
+  padding-top: 5px; /* 上の余白を縮小 */
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ffffff;
+  margin-top: 10px;
+}
+
+.Hero-name {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #ffffff;
+  margin: 0; /* デフォルトの余白を削除 */
+}
+
+.Hero-purson {
+  justify-content: center;
+  text-align: center;
+  font-size: 1.3rem;
+  font-style: italic;
+  font-weight: bold;
+  color: #ffffff;
+  margin: 0; /* デフォルトの余白を削除 */
+}
+
+@media screen and (max-width: 768px) {
+  .Hero {
+    display: none;
+  }
+}
+
+/*
+  ################################################################     記事     ##########################################################
+*/
+
+.section {
+  padding: 30px 15px;
+}
+.section-headline {
+  text-align: center;
+  font-size: 40px;
+  font-weight: bold;
+  margin: 0 0 40px;
+}
+
+.FEATURED-head {
+  position: relative;
+  text-align: left;
+  font-size: 30px;
+  padding-left: 100px;
+  font-weight: bold;
+  letter-spacing: -10px; /* 文字間隔を調整 */
+  font-weight: bold;
+
+  margin: 30px 0 40px; /* 上の余白を追加 */
+  letter-spacing: 2px; /* 文字間隔を調整 */
+  transition: color 2.3s ease-in-out, border-bottom, border-top .5s ease-in-out; /* トランジションを複数指定 */
+}
+.FEATURED-head::before,
+.FEATURED-head::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background-color: #20cbff;
+  transition: width .5s ease-in-out;
+}
+.FEATURED-head::before {
+  bottom: -2px;
+  left: 0;
+}
+.FEATURED-head::after {
+  top: -2px;
+  right: 0;
+}
+.FEATURED-head:hover::before,
+.FEATURED-head:hover::after {
+  width: 100%;
+}
+
+.card-container {
+  padding-left: 110px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.card {
+  width: calc(20% - 20px);
+  margin-bottom: 20px;
+  flex: 1 0 calc(20% - 20px);
+  max-width: calc(20% - 20px);
+  padding: 0 10px;
+  width: 90%;
+}
+.card-link {
+  display: block;
+  color: #333;
+  text-decoration: none;
+  position: relative;
+}
+.card-label {
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: #999;
+  color: #fff;
+  display: block;
+  padding: 5px 10px;
+  font-size: 12px;
+}
+
+.card-tag {
+  padding: 0;
+  margin: 0;
+}
+
+.card-image {
+  display: flex;
+  align-items: center;
+  transition: transform 0.3s ease-in-out; /* ホバー時の変化をアニメーション化 */
+  width: 350px;
+  height: 350px;
+  overflow: hidden;
+  position: relative;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease-in-out;
+  overflow: hidden;
+}
+
+.card-image:hover {
+  transform: scale(1.03); /* ホバー時に画像を少し拡大 */
+  overflow: hidden;
+}
+.card-time {
+  margin: 0;
+  margin-bottom: 15px;
+  font-size: 17px;
+  font-weight: lighter;
+  color: #333;
+  padding-left: 5px;
+}
+.card-headline {
+  margin: 0;
+  font-size: 20px;
+  font-weight: lighter;
+  color: #333;
+  padding-left: 5px;
+}
+.card-description {
+  margin: 0;
+  color: #fff;
+}
+
+
+.card-genre {
+  margin: 0;
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+}
+
+.card-button {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-radius: 50%; /* 丸い領域にする */
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+}
+
+.card-button svg {
+  margin-right: 10px;
+  /* 任意のスタイルを追加 */
+}
+
+.card-contents {
+  gap: 20px;
+  display: flex;
+}
+.watch-later-button {
+  z-index: 50;
+}
+.like-button {
+  z-index: 50;
+}
+.active {
+  color: #ff0000;
+}
+
+/* レスポンシブデザイン */
+/* レスポンシブデザイン */
+@media screen and (max-width: 768px) {
+  .section-card-list {
+    max-width: 100%; /* 親要素を超えないように設定 */
+  }
+  .card-container {
+    display: flex;
+    flex-direction: column; /* 縦並びに変更 */
+    align-items: center; /* 要素を中央揃えにするために必要な場合 */
+    padding: 0;
+  }
+
+  .card {
+    width: 100%; /* 幅を100%に設定 */
+    margin-bottom: 20px; /* 要素間の余白を追加 */
+    padding: 15px; /* カードの内側の余白を追加 */
+    box-sizing: border-box; /* パディングを含めた全体の幅にするために必要 */
+
+    /* カードのスタイル */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+   
+    width: auto;
+    margin-bottom: 10px;
+    flex: auto;
+    max-width: none;
+    padding: 15px;
+  
+  }
+
+  .card-link {
+    display: block; /* リンク要素をブロックレベルに変更 */
+    text-decoration: none;
+    color: #333;
+  }
+
+  .card-image {
+    width: 100%; /* 画像を横幅いっぱいに表示 */
+    height: auto;
+    margin-bottom: 10px;
+    border-radius: 8px; /* 画像の角を丸くする（必要に応じて） */
+  }
+
+  .card-headline {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+  }
+
+  .card-time {
+    font-size: 0.8rem;
+    color: #777;
+    margin-bottom: 10px;
+  }
+
+  .card-genre {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+
+  .card-tag {
+    display: inline-block;
+    font-size: 0.9rem;
+    color: #555;
+    margin-right: 5px;
+  }
+}
+
+
+
+
+
+/*
+########################################################          padination       #############################################
+*/
+
+/* Pagination Styles */
+.pagination {
+  font-weight: lighter;
+  font-family: Cochin, Georgia, Times, 'Times New Roman', serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.pagination a {
+  display: inline-block;
+  color: #000000;
+  text-decoration: none;
+  margin: 0 5px;
+  padding: 8px 12px;
+  border: 1px solid #000000;
+  border-radius: 4px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.pagination a:hover {
+  background-color: #ac2c2c;
+  color: #fff;
+}
+
+.pagination .current {
+  display: inline-block;
+  margin: 0 5px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #ac2c2c;
+  padding: 8px 12px;
+  border: 1px solid #000000;
+  border-radius: 4px;
+}
