@@ -203,8 +203,7 @@ cloudinary.config(
 CLOUDINARY_STORAGE = {
     'CLOUD_NAME': 'dx9habsuz',
     'API_KEY': '167433335558394',
-    'API_SECRET': 'b5lj7kMMLcL7ns9QpjtFpCH-ifQ',
-    secure=True
+    'API_SECRET': 'b5lj7kMMLcL7ns9QpjtFpCH-ifQ'
 }
 
 
